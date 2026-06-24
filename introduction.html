@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Introduction — AI Consulting, Inc.</title>
+<meta name="robots" content="noindex,nofollow">
+<meta name="description" content="AIコンサルティング株式会社 中核メンバーのご紹介。">
+<link rel="stylesheet" href="styles.css">
+<style>
+  /* Simpler header for unlinked page */
+  .quiet-header{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-mid) 100%);color:#fff;padding:28px;border-bottom:2px solid var(--gold)}
+  .quiet-header .inner{max-width:1180px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:24px}
+  .quiet-header .brand .en{font-family:var(--chancery);font-style:italic;font-size:28px;color:#fff}
+  .quiet-header .brand .jp{font-size:11px;color:var(--gold-light);letter-spacing:2px;display:block;margin-top:2px}
+  .quiet-header .tag{font-family:var(--chancery);font-style:italic;color:var(--gold-light);font-size:14px}
+
+  .intro-hero{
+    background:
+      radial-gradient(ellipse at 80% 20%, rgba(46,120,210,.20), transparent 50%),
+      linear-gradient(160deg,var(--navy) 0%,var(--navy-mid) 100%);
+    color:#fff;padding:80px 28px;text-align:center;border-bottom:1px solid rgba(201,169,97,.3);
+  }
+  .intro-hero h1{font-family:var(--jp);font-size:40px;font-weight:700;letter-spacing:1px;margin-bottom:8px}
+  .intro-hero .en{font-family:var(--chancery);font-style:italic;color:var(--gold-light);font-size:22px;margin-bottom:14px;display:block}
+  .intro-hero .accent{display:inline-block;width:80px;height:2px;background:var(--gold);margin:14px auto}
+  .intro-hero p{font-size:15px;color:rgba(255,255,255,.85);max-width:740px;margin:14px auto 0;line-height:1.9}
+
+  .profile{padding:80px 28px}
+  .profile + .profile{padding-top:0}
+  .profile .inner{max-width:1080px;margin:0 auto;background:#fff;border-radius:10px;box-shadow:var(--shadow);overflow:hidden;display:grid;grid-template-columns:300px 1fr;border:1px solid var(--ice)}
+  .profile.flip .inner{grid-template-columns:1fr 300px}
+
+  .profile .photo{background:var(--navy);padding:36px 28px;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;color:#fff;border-right:2px solid var(--gold)}
+  .profile.flip .photo{border-right:0;border-left:2px solid var(--gold)}
+  .profile .photo img{width:200px;height:200px;border-radius:50%;object-fit:cover;border:3px solid var(--gold);box-shadow:0 8px 20px rgba(0,0,0,.25);margin-bottom:18px}
+  .profile .photo .name-en{font-family:var(--chancery);font-style:italic;color:var(--gold-light);font-size:18px;margin-bottom:6px;text-align:center}
+  .profile .photo .name{font-size:22px;font-weight:700;letter-spacing:2px;text-align:center}
+  .profile .photo .role{font-size:12px;color:var(--sky);margin-top:10px;letter-spacing:1px;text-align:center}
+
+  .profile .body{padding:48px}
+  .profile .label{font-family:var(--chancery);font-style:italic;color:var(--gold);font-size:14px;letter-spacing:1px;margin-bottom:4px}
+  .profile h2{color:var(--navy);font-size:26px;margin-bottom:6px;font-weight:700}
+  .profile h2 + .role{color:var(--blue);font-style:italic;font-family:var(--chancery);font-size:16px;margin-bottom:22px;display:block}
+  .profile .body p{font-size:14.5px;color:var(--body);line-height:1.95;margin-bottom:14px}
+  .profile .body .quote{font-family:var(--chancery);font-style:italic;color:var(--gold);font-size:18px;border-left:3px solid var(--gold);padding-left:18px;margin:24px 0;background:var(--cream);padding-top:14px;padding-bottom:14px;border-radius:0 6px 6px 0}
+
+  .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+  .tag{background:var(--ice);color:var(--navy);padding:6px 12px;border-radius:14px;font-size:12px;font-weight:600;letter-spacing:.3px}
+
+  .closing{background:var(--navy);color:#fff;padding:80px 28px;text-align:center;border-top:2px solid var(--gold)}
+  .closing .q{font-family:var(--chancery);font-style:italic;color:var(--gold-light);font-size:30px;margin-bottom:14px}
+  .closing p{color:var(--ice);font-size:14px;max-width:600px;margin:0 auto;line-height:1.9}
+  .closing .contact{margin-top:24px;font-family:var(--chancery);font-style:italic;color:var(--gold);font-size:18px}
+
+  @media (max-width:780px){
+    .profile .inner,.profile.flip .inner{grid-template-columns:1fr}
+    .profile .body{padding:32px 24px}
+    .profile .photo{border-right:0;border-bottom:2px solid var(--gold)}
+    .intro-hero h1{font-size:28px}
+  }
+</style>
+</head>
+<body>
+
+<header class="quiet-header">
+  <div class="inner">
+    <div class="brand">
+      <span class="en">AI Consulting, Inc.</span>
+      <span class="jp">AIコンサルティング株式会社</span>
+    </div>
+    <div class="tag">— Innovation Mission Force —</div>
+  </div>
+</header>
+
+<section class="intro-hero">
+  <span class="en">Meet the Team</span>
+  <h1>中核メンバーのご紹介</h1>
+  <div class="accent"></div>
+  <p>
+    産学連携の実績にもとづくAI・データアナリティクス活用の共創 Lab.<br>
+    "上善は水の如し" ── お客様の構想に最適なかたちで寄り添う、私たちの仲間です。
+  </p>
+</section>
+
+<!-- ============ Kogure ============ -->
+<section class="profile">
+  <div class="inner">
+    <div class="photo">
+      <img src="img/kogure.png" alt="小暮 厚之">
+      <div class="name-en">Atsuyuki Kogure</div>
+      <div class="name">小暮 厚之</div>
+      <div class="role">理事 / 顧問</div>
+    </div>
+    <div class="body">
+      <div class="label">Strategic Advisor</div>
+      <h2>Branding &amp; Strategic Advisor</h2>
+      <span class="role">— Statistician, Insurance &amp; Risk Theory —</span>
+
+      <p>
+        慶應義塾大学名誉教授。東北大学経済学部卒業後、イェール大学で統計学博士号（Ph.D.）を取得。
+        統計学とリスク理論の研究に長年取り組む。
+      </p>
+      <p>
+        福島大学助教授、千葉大学助教授・教授を経て、2001年より慶應義塾大学総合政策学部教授として教育・研究に従事。
+        専門は統計学や金融・保険リスク理論で、データ分析の理論と応用の両面から学術の発展に寄与。
+      </p>
+      <p>
+        日本銀行金融研究所客員研究員、財務省財務総合政策研究所研究会委員、内閣府統計委員会専門委員、日本統計学会理事・監事、日本学術会議連携会員など、多様な政府・学会活動にも関わった。
+        日本統計学会賞の受賞をはじめ、学界・産業界の幅広い分野での活動を通じて統計科学の社会的な価値にも貢献している。
+      </p>
+
+      <div class="quote">"理論と実装をつなぐ ── データの背後にあるロジックを、事業の言葉で語り直す。"</div>
+
+      <div class="tags">
+        <span class="tag">統計学</span>
+        <span class="tag">リスク理論</span>
+        <span class="tag">慶應義塾大学 名誉教授</span>
+        <span class="tag">Ph.D. (Yale)</span>
+        <span class="tag">産学連携</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Murase ============ -->
+<section class="profile flip">
+  <div class="inner">
+    <div class="body">
+      <div class="label">Sales &amp; Marketing</div>
+      <h2>Sales &amp; Marketing Director</h2>
+      <span class="role">— Data Science × AI-Driven Engineering —</span>
+
+      <p>
+        慶應義塾大学大学院 政策・メディア研究科卒。小暮研の門下生としてデータサイエンスを研究。
+        その後、AI開発ベンチャーに入社し、COOとしてプロジェクトマネジメントに従事。
+      </p>
+      <p>
+        データサイエンスの知見に加え、Web開発を含むエンジニアリング、マーケティングサイエンスから
+        IoTセンサー活用まで幅広い領域での実績を持つ。
+      </p>
+      <p>
+        <strong style="color:var(--navy)">強み:</strong> 統計／データサイエンス／AI駆動開発の知見。
+        二次データ分析（セカンドオピニオン）、既存分析手法の妥当性アセスメント、新規デザイン・AI駆動型開発リプレースの提案を得意とする。
+      </p>
+
+      <div class="quote">"事業に効くAIは、現場の文脈に溶け込んだAI ── 一緒に組み立てましょう。"</div>
+
+      <div class="tags">
+        <span class="tag">データサイエンス</span>
+        <span class="tag">AI駆動開発</span>
+        <span class="tag">プロジェクトマネジメント</span>
+        <span class="tag">マーケティングサイエンス</span>
+        <span class="tag">IoT</span>
+        <span class="tag">慶應SFC</span>
+      </div>
+    </div>
+    <div class="photo">
+      <img src="img/murase.png" alt="村瀬 克成">
+      <div class="name-en">Katsunari Murase</div>
+      <div class="name">村瀬 克成</div>
+      <div class="role">Sales &amp; Marketing Director</div>
+    </div>
+  </div>
+</section>
+
+<section class="closing">
+  <div class="q">"your Innovation Partner"</div>
+  <p>
+    AI、データ、そして事業。<br>
+    三つを一本の線で結ぶために、私たちは"水"のように貴社の構想に寄り添います。
+  </p>
+  <div class="contact">info@ai-imf.com  ·  www.ai-imf.com</div>
+</section>
+
+</body>
+</html>
