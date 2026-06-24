@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AI駆動デモ | AI Consulting, Inc.</title>
+<meta name="description" content="AIコンサルティング株式会社が Claude Code 等の AI 駆動開発で構築した、業種別シミュレーター・ダッシュボードのライブデモ集。">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header"><div class="nav">
+  <div class="brand">
+    <span class="en">AI Consulting, Inc.</span>
+    <span class="jp">AIコンサルティング株式会社</span>
+  </div>
+  <ul>
+    <li><a href="index.html">HOME</a></li>
+    <li><a href="about.html">会社概要</a></li>
+    <li><a href="services.html">サービス</a></li>
+    <li><a href="demos.html">デモ</a></li>
+    <li><a href="blog/index.html">ブログ</a></li>
+    <li><a href="contact.html" class="cta">お問い合わせ</a></li>
+  </ul>
+</div></header>
+
+<section class="page-hero"><div class="inner">
+  <div class="crumbs"><a href="index.html">HOME</a> &nbsp;/&nbsp; DEMOS</div>
+  <h1>AI駆動デモ</h1>
+  <div class="en">Live Prototypes Built with Claude Code</div>
+</div></section>
+
+<section class="section">
+  <div class="container">
+    <p class="lead">
+      私たちが Claude Code をはじめとするフロンティアAI（Anthropic Claude / OpenAI Codex）を使って、実際に "数日〜数週間" で構築してきた業種別ソリューションのライブデモ集です。
+      各デモは独立した Web アプリとして稼働しており、ボタン1つでお試しいただけます。
+    </p>
+    <p class="lead" style="font-style:italic;color:var(--muted);font-size:14px">
+      ※ いずれも試作・PoC 用途であり、実運用時は業界規制・データ要件に合わせて再設計いたします。
+    </p>
+
+    <div class="cards" style="margin-top:48px">
+
+      <a class="card demo-card" href="https://insurance-simulator.vercel.app" target="_blank" rel="noopener">
+        <span class="num">01</span>
+        <h3>保険プラン・シミュレーター</h3>
+        <span class="en">Insurance Plan Simulator</span>
+        <p>家族構成・働き方・資産・リスク許容度から、死亡／医療／がん／就業不能の必要保障額とカバー率を分析。90歳までの資産推移を3シナリオで予測。生命／医療／ペット／自動車／地震保険までカバーした単一ファイルの静的 Web ツール。</p>
+        <span class="demo-cta">Live demo →</span>
+      </a>
+
+      <a class="card demo-card" href="https://hr-core-ai-app.vercel.app" target="_blank" rel="noopener">
+        <span class="num">02</span>
+        <h3>HR コア人事AI</h3>
+        <span class="en">People Analytics AI</span>
+        <p>採用・育成・配置をデータドリブンに最適化する人事ダッシュボード。Next.js + shadcn/ui で、エンゲージメント・リテンション・スキルマッピングを統合可視化。エクゼクティブが「次の打ち手」をその場で議論できる UI。</p>
+        <span class="demo-cta">Live demo →</span>
+      </a>
+
+      <a class="card demo-card" href="https://realestate-demo-hub.vercel.app" target="_blank" rel="noopener">
+        <span class="num">03</span>
+        <h3>資産管理・不動産 DX</h3>
+        <span class="en">Asset &amp; Real Estate DX</span>
+        <p>ポートフォリオ可視化と将来価値予測を一画面に集約。物件ごとのキャッシュフロー、エリア相場、リスクシナリオを横断比較。意思決定のスピードと精度を引き上げる管理者ダッシュボード。</p>
+        <span class="demo-cta">Live demo →</span>
+      </a>
+
+      <a class="card demo-card" href="https://car-price-simulator.vercel.app" target="_blank" rel="noopener">
+        <span class="num">04</span>
+        <h3>中古車プライス・シミュレーター</h3>
+        <span class="en">Used Car Price Simulator</span>
+        <p>車種・年式・走行距離・状態から予測価格を即時算出。回帰モデル＋業界相場で営業現場・査定担当者のクロージング率を支援する単一ファイル Web ツール。</p>
+        <span class="demo-cta">Live demo →</span>
+      </a>
+
+      <a class="card demo-card" href="#" onclick="alert('Frontier AI ダッシュボードは現在準備中です。ご興味があれば info@ai-imf.com までご連絡ください。');return false;">
+        <span class="num">05</span>
+        <h3>フロンティアAI 脅威対策ダッシュボード</h3>
+        <span class="en">Frontier AI Risk Dashboard</span>
+        <p>先端AIに伴う情報セキュリティ・倫理リスクを可視化。経営層が説明可能な統制を保ちながらAI活用を加速するためのリスクモニタリング基盤。</p>
+        <span class="demo-cta">公開準備中 →</span>
+      </a>
+
+      <a class="card demo-card" href="#" onclick="alert('ATM コールセンターAIは現在準備中です。ご興味があれば info@ai-imf.com までご連絡ください。');return false;">
+        <span class="num">06</span>
+        <h3>ATM コールセンターAI</h3>
+        <span class="en">ATM Call Center Assistant</span>
+        <p>ATM の障害・問い合わせ対応をAIエージェントが一次受付。会話ログから根本原因を分類・トレンド化し、現場負荷とSLA違反を削減するオペレーション基盤。</p>
+        <span class="demo-cta">公開準備中 →</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<section class="section alt">
+  <div class="container">
+    <h2>すべてのデモに共通する設計思想</h2>
+    <span class="en-sub">Design Principles</span>
+
+    <div class="cards" style="margin-top:32px">
+      <div class="card">
+        <span class="num">A</span>
+        <h3>Vibe Coding × 仕様駆動</h3>
+        <span class="en">Frontier AI Workflows</span>
+        <p>Claude Code でモデルと協調しながら、UI／ロジック／テストをマルチエージェントで並行構築。仕様→検証→修正のループを数時間で1周し、デモ初稿を素早く作る。</p>
+      </div>
+      <div class="card">
+        <span class="num">B</span>
+        <h3>Human in the Loop</h3>
+        <span class="en">Insightful UI</span>
+        <p>"AIの予測" を出して終わりではなく、人間が判断・修正できる UI を最初から組み込む。営業・経営層が"その場で議論できる"画面設計を重視。</p>
+      </div>
+      <div class="card">
+        <span class="num">C</span>
+        <h3>計測可能な PoC</h3>
+        <span class="en">From PoC to Production</span>
+        <p>"動くもの" を最短で出して、KPI が動くかを早期検証。本番運用に進むかどうかを定量で判断できるよう、PoC 段階から計測指標を仕込む。</p>
+      </div>
+    </div>
+
+    <div style="text-align:center;margin-top:48px">
+      <a href="contact.html" class="btn gold">貴社向けのデモを相談する →</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="inner">
+    <div class="brand-block">
+      <span class="en">AI Consulting, Inc.</span>
+      <span class="jp">— ARISING INNOVATIONS —</span>
+      <p style="margin-top:14px;color:rgba(255,255,255,.7)">your Innovation Partner として、AI＆データ活用による事業構想・実装をご一緒に。</p>
+    </div>
+    <div>
+      <h4>CONTACT</h4>
+      <p><a href="mailto:info@ai-imf.com">info@ai-imf.com</a></p>
+      <p><a href="contact.html">お問い合わせフォーム</a></p>
+    </div>
+    <div>
+      <h4>OFFICE</h4>
+      <p>〒106-0045<br>東京都港区麻布十番<br>1丁目2番7号<br>ラフィネ麻布十番701</p>
+    </div>
+    <div>
+      <h4>EXPLORE</h4>
+      <p><a href="about.html">会社概要</a></p>
+      <p><a href="services.html">サービス</a></p>
+      <p><a href="demos.html">AI駆動デモ</a></p>
+      <p><a href="blog/index.html">ブログ</a></p>
+    </div>
+  </div>
+  <div class="copy">
+    <span class="c">C</span>opyright © AI Consulting, Inc.  All Rights reserved.<br>
+    <span style="opacity:.6">T8011501019669 — インボイス制度適格請求書発行事業者登録番号</span>
+  </div>
+</footer>
+
+</body>
+</html>

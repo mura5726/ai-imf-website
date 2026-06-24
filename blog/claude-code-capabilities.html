@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Claude Code でできる10のこと | AI Consulting, Inc. Blog</title>
+<meta name="description" content="ターミナル上で自走するコーディングエージェントの実務活用例">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<header class="site-header"><div class="nav">
+  <div class="brand">
+    <span class="en">AI Consulting, Inc.</span>
+    <span class="jp">AIコンサルティング株式会社</span>
+  </div>
+  <ul>
+    <li><a href="../index.html">HOME</a></li>
+    <li><a href="../about.html">会社概要</a></li>
+    <li><a href="../services.html">サービス</a></li>
+    <li><a href="../demos.html">デモ</a></li>
+    <li><a href="index.html">ブログ</a></li>
+    <li><a href="../contact.html" class="cta">お問い合わせ</a></li>
+  </ul>
+</div></header>
+
+<section class="page-hero"><div class="inner">
+  <div class="crumbs"><a href="../index.html">HOME</a> &nbsp;/&nbsp; <a href="index.html">BLOG</a></div>
+  <h1>Claude Code でできる10のこと</h1>
+  <div class="en">ターミナル上で自走するコーディングエージェントの実務活用例</div>
+</div></section>
+
+<section class="section">
+  <article class="article">
+    <a href="index.html" class="back-link">ブログ一覧へ戻る</a>
+    <div class="article-meta">
+      <span class="blog-tag">技術</span>
+      <span class="date">2026.06.22</span>
+      <span class="author">by AI Consulting, Inc.</span>
+    </div>
+    <p>
+      Claude Code は、Anthropic が提供する <strong>ターミナルで動くコーディングエージェント</strong>です。「コードを書く AI」というより、「コードベースを理解して、テストして、デプロイまで完遂する協働者」と表現する方が近い。私たちは社内開発の主力ツールとして毎日使い倒しています。
+    </p>
+    <p>
+      この記事では、私たちが実際に "業務効率化" や "デモ構築" でどう使っているか、具体例を10通り紹介します。
+    </p>
+
+    <h2>1. ゼロから Web アプリを構築する</h2>
+    <p>
+      「家計のリスクを可視化する単一 HTML の Web ツールを作って」と頼むと、Chart.js のグラフ込みで丸ごと作ってくれます。<a href="https://insurance-simulator.vercel.app" target="_blank" rel="noopener">保険プランシミュレーター</a>は実際にこの方式で作ったデモです。
+    </p>
+
+    <h2>2. 既存コードベースに機能を足す</h2>
+    <p>
+      "この React 画面に、CSV インポートと取り込みプレビューを足して" と頼めば、既存のスタイルと整合性を取りながら追加実装してくれます。ファイル間の依存関係を読んで動くのが SE と違う点。
+    </p>
+
+    <h2>3. テストを自動で書いて回す</h2>
+    <p>
+      ロジックを書いた後に "テスト書いて、コーナーケースもカバーして" と言うと、Jest や Vitest のテストを生成して実行までしてくれます。落ちたケースは自動で修正します。
+    </p>
+
+    <h2>4. データ分析の探索</h2>
+    <p>
+      "この CSV の傾向を可視化して、異常値も出して" と頼めば、Python で読み込み・前処理・グラフ化を一気にやります。私たちはこれをセカンドオピニオン分析の "下準備" として使っています。
+    </p>
+
+    <h2>5. デプロイ＆運用</h2>
+    <p>
+      作った Web アプリを "vercel に上げて URL ちょうだい" と頼むと、設定ファイルを書いて gh CLI / vercel CLI でデプロイまで自走します。
+    </p>
+
+    <h2>6. リファクタリング</h2>
+    <p>
+      "このファイル長すぎる、3つに分けて" と頼むと、責務ごとに分割しつつ、import や呼び出し側も書き換えます。安全に大きく動かせるのが Claude Code の強みです。
+    </p>
+
+    <h2>7. 業務マニュアル → 業務ツールへの変換</h2>
+    <p>
+      "この PDF の業務マニュアルを読んで、それを Web 入力フォームに落として" と頼むと、項目を整理してフォームを作ります。属人化した業務を仕組み化するときに使います。
+    </p>
+
+    <h2>8. 議事録 → タスク化</h2>
+    <p>
+      "この議事録を読んで、ToDo と担当者・期限を表に出して" と頼めば、構造化された Markdown 表を返します。会議の生産性 IT 化の第一歩。
+    </p>
+
+    <h2>9. 既存システムのリプレース候補調査</h2>
+    <p>
+      "この古い VB マクロを読んで、Python で書き直すなら何を採用すべきか提案して" と頼めば、設計案＋雛形を返します。これは社内システム刷新の意思決定支援になります。
+    </p>
+
+    <h2>10. プロトタイプを試作して、要件を引き出す</h2>
+    <p>
+      何より、要件が固まらないときに "とりあえずこれで作ってみて" と動かすと、現場との議論が一気に進みます。<strong>動くもので議論する</strong> のが私たちの基本姿勢です。
+    </p>
+
+    <blockquote>
+      "Claude Code は、コードを書く AI ではなく、業務を編む共著者である。"
+    </blockquote>
+
+    <h2>関連リンク</h2>
+    <ul>
+      <li><a href="what-is-fde.html">FDE（Forward Deployed Engineer）とは何か</a></li>
+      <li><a href="vibe-coding-with-claude.html">"バイブ・コーディング" を業務に落とすには</a></li>
+      <li><a href="../demos.html">AI駆動デモ一覧</a></li>
+    </ul>
+    <hr style="margin:48px 0;border:0;border-top:1px solid var(--ice)">
+    <p style="text-align:center;color:var(--muted);font-size:13px;font-style:italic">
+      この記事についてのご質問やご相談は <a href="../contact.html">お問い合わせ</a> よりお気軽にどうぞ。
+    </p>
+    <a href="index.html" class="back-link">ブログ一覧へ戻る</a>
+  </article>
+</section>
+
+<footer class="site-footer">
+  <div class="inner">
+    <div class="brand-block">
+      <span class="en">AI Consulting, Inc.</span>
+      <span class="jp">— ARISING INNOVATIONS —</span>
+      <p style="margin-top:14px;color:rgba(255,255,255,.7)">your Innovation Partner として、AI＆データ活用による事業構想・実装をご一緒に。</p>
+    </div>
+    <div>
+      <h4>CONTACT</h4>
+      <p><a href="mailto:info@ai-imf.com">info@ai-imf.com</a></p>
+      <p><a href="../contact.html">お問い合わせフォーム</a></p>
+    </div>
+    <div>
+      <h4>OFFICE</h4>
+      <p>〒106-0045<br>東京都港区麻布十番<br>1丁目2番7号<br>ラフィネ麻布十番701</p>
+    </div>
+    <div>
+      <h4>EXPLORE</h4>
+      <p><a href="../about.html">会社概要</a></p>
+      <p><a href="../services.html">サービス</a></p>
+      <p><a href="../demos.html">AI駆動デモ</a></p>
+      <p><a href="index.html">ブログ</a></p>
+    </div>
+  </div>
+  <div class="copy">
+    <span class="c">C</span>opyright © AI Consulting, Inc.  All Rights reserved.<br>
+    <span style="opacity:.6">T8011501019669 — インボイス制度適格請求書発行事業者登録番号</span>
+  </div>
+</footer>
+
+</body>
+</html>
