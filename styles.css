@@ -84,7 +84,7 @@ a:hover{color:var(--bright)}
   color:#fff;
   border-bottom:2px solid var(--gold);
 }
-.hero-top h1{font-family:var(--chancery);font-style:italic;font-weight:400;font-size:64px;line-height:1.1;margin-bottom:10px;letter-spacing:.5px}
+.hero-top h1{font-family:var(--chancery);font-style:italic;font-weight:400;font-size:64px;line-height:1.1;margin-bottom:10px;letter-spacing:.5px;color:#fff}
 .hero-top .accent{display:inline-block;width:80px;height:2px;background:var(--gold);margin:18px auto}
 .hero-top .lede{font-family:var(--chancery);font-style:italic;color:var(--gold-light);font-size:22px;letter-spacing:.5px}
 
@@ -299,6 +299,87 @@ a:hover{color:var(--bright)}
 .solution-img-dark{background:var(--navy);border-radius:8px;padding:0;overflow:hidden}
 .solution-img-dark img{box-shadow:none;border-radius:0}
 
+/* ===== Brain = AI hero (between Quote band and Core Services) ===== */
+.brain-section{
+  position:relative;
+  overflow:hidden;
+  color:#fff;
+  isolation:isolate;
+  min-height:480px;
+  border-bottom:1px solid rgba(201,169,97,.3);
+}
+.brain-img-wrap{
+  position:absolute;inset:0;z-index:0;
+  background:var(--navy);
+}
+.brain-img{
+  position:absolute;inset:0;
+  width:100%;height:100%;
+  object-fit:cover;object-position:center;
+  opacity:0;
+  /* muted look: desaturate + low brightness + slight blur so text reads cleanly */
+  filter:grayscale(35%) brightness(.42) contrast(.85) blur(1.2px);
+  transition:opacity 1.2s ease-in-out;
+  animation:brain-slide 24s infinite;
+  will-change:opacity;
+}
+/* 4-image rotation: each visible 6s, crossfade ~1.2s. Cycle 24s. */
+.brain-img-1{animation-delay:0s}
+.brain-img-2{animation-delay:6s}
+.brain-img-3{animation-delay:12s}
+.brain-img-4{animation-delay:18s}
+@keyframes brain-slide{
+  0%        {opacity:0}
+  2%, 23%   {opacity:1}
+  27%, 100% {opacity:0}
+}
+/* Overlay: dark navy gradient with subtle gold radial highlight for warmth */
+.brain-overlay{
+  position:absolute;inset:0;z-index:1;
+  background:
+    radial-gradient(ellipse at 20% 30%, rgba(201,169,97,.10), transparent 50%),
+    radial-gradient(ellipse at 80% 70%, rgba(46,120,210,.18), transparent 55%),
+    linear-gradient(135deg, rgba(10,31,68,.86) 0%, rgba(15,45,107,.80) 50%, rgba(10,31,68,.92) 100%);
+  pointer-events:none;
+}
+.brain-text{position:relative;z-index:2;padding:96px 28px 88px}
+.brain-tagline{
+  display:inline-block;
+  font-family:var(--chancery);font-style:italic;
+  color:var(--gold-light);font-size:18px;letter-spacing:1px;
+  margin-bottom:18px;
+  padding:4px 14px;border:1px solid rgba(201,169,97,.45);border-radius:20px;
+  background:rgba(10,31,68,.35);
+}
+.brain-h2{
+  font-family:var(--jp);font-weight:700;
+  color:#fff;font-size:34px;line-height:1.5;letter-spacing:.5px;
+  margin-bottom:24px;
+  text-shadow:0 4px 18px rgba(0,0,0,.4);
+  max-width:920px;
+}
+.brain-body{
+  color:rgba(255,255,255,.88);
+  font-size:15.5px;line-height:2;
+  max-width:760px;
+  text-shadow:0 2px 10px rgba(0,0,0,.35);
+}
+/* Subtle indicator dots showing the slide cycle */
+.brain-section::after{
+  content:"";
+  position:absolute;
+  left:50%;bottom:24px;transform:translateX(-50%);
+  z-index:2;
+  width:64px;height:2px;
+  background:linear-gradient(90deg,transparent,rgba(201,169,97,.6),transparent);
+  pointer-events:none;
+}
+/* Accessibility: respect reduced-motion */
+@media (prefers-reduced-motion: reduce){
+  .brain-img{animation:none}
+  .brain-img-1{opacity:1}
+}
+
 /* ===== Members ===== */
 .members{display:grid;grid-template-columns:1fr;gap:32px;margin-top:32px}
 .member-card{
@@ -404,6 +485,10 @@ a:hover{color:var(--bright)}
   .hero-bottom{padding:48px 20px 56px}
   .hero-bottom .jp-title{font-size:24px;letter-spacing:2px}
   .hero-bottom .sub-light{font-size:14.5px;line-height:2}
+  .brain-text{padding:64px 20px 56px}
+  .brain-h2{font-size:24px;line-height:1.55}
+  .brain-body{font-size:14.5px;line-height:1.95}
+  .brain-section{min-height:380px}
   .solution-row{grid-template-columns:1fr;gap:24px;padding:24px}
   .solution-row.flip .solution-text{order:1}
   .solution-row.flip .solution-img{order:2}
