@@ -335,7 +335,6 @@ a:hover{color:var(--bright)}
   position:absolute;inset:0;
   display:block;
   opacity:0;
-  animation:brain-slide-show 30s infinite;
   text-decoration:none;
   cursor:pointer;
 }
@@ -388,18 +387,31 @@ a:hover{color:var(--bright)}
   border-color:var(--gold);
 }
 
-/* 5-slide rotation: each visible 5s, crossfade ~1s. Cycle 30s (5x6s) */
+/* 6-slide rotation: each visible 5s, crossfade ~1s. Cycle 36s (6x6s) */
+.brain-slide{animation:brain-slide-show 36s infinite}
 .brain-slide-1{animation-delay:0s}
 .brain-slide-2{animation-delay:6s}
 .brain-slide-3{animation-delay:12s}
 .brain-slide-4{animation-delay:18s}
 .brain-slide-5{animation-delay:24s}
+.brain-slide-6{animation-delay:30s}
 
 @keyframes brain-slide-show{
   0%        {opacity:0; z-index:1}
-  2%, 18%   {opacity:1; z-index:2}
-  20%, 100% {opacity:0; z-index:1}
+  3%, 14%   {opacity:1; z-index:2}
+  17%, 100% {opacity:0; z-index:1}
 }
+
+/* Featured (training) slide gets coral accent */
+.brain-slide-training .brain-slide-num{
+  color:#fff;
+  background:var(--coral);
+  padding:3px 10px;border-radius:3px;
+  font-family:var(--jp);font-style:normal;font-weight:700;
+  letter-spacing:2px;font-size:10px;
+}
+.brain-slide-training .brain-slide-cta{color:#fff;border-color:rgba(255,255,255,.6)}
+.brain-slide-training:hover .brain-slide-cta{color:var(--coral);border-color:var(--coral)}
 
 /* Dots indicator at bottom of slider */
 .brain-slider-dots{
@@ -411,16 +423,17 @@ a:hover{color:var(--bright)}
 .brain-dot{
   width:7px;height:7px;border-radius:50%;
   background:rgba(255,255,255,.35);
-  animation:brain-dot-pulse 30s infinite;
+  animation:brain-dot-pulse 36s infinite;
 }
 .brain-dot-1{animation-delay:0s}
 .brain-dot-2{animation-delay:6s}
 .brain-dot-3{animation-delay:12s}
 .brain-dot-4{animation-delay:18s}
 .brain-dot-5{animation-delay:24s}
+.brain-dot-6{animation-delay:30s}
 @keyframes brain-dot-pulse{
-  0%, 18%   {background:var(--gold-light); box-shadow:0 0 8px rgba(201,169,97,.6);}
-  20%, 100% {background:rgba(255,255,255,.35); box-shadow:none;}
+  0%, 14%   {background:var(--gold-light); box-shadow:0 0 8px rgba(201,169,97,.6);}
+  17%, 100% {background:rgba(255,255,255,.35); box-shadow:none;}
 }
 
 /* Hover pause for accessibility (mouse over the slider stops rotation) */
@@ -431,6 +444,129 @@ a:hover{color:var(--bright)}
   .brain-slide,.brain-dot{animation:none}
   .brain-slide-1{opacity:1}
   .brain-dot-1{background:var(--gold-light)}
+}
+
+/* ===== Featured: Claude Code Training section ===== */
+:root{
+  --coral:#CC785C;
+  --coral-dk:#A85535;
+  --coral-soft:#F6E7DF;
+}
+.training-section{
+  position:relative;
+  padding:96px 28px;
+  background:linear-gradient(135deg,#0A1F44 0%,#0F2D6B 55%,#13366f 100%);
+  color:#fff;
+  overflow:hidden;
+  border-top:1px solid rgba(201,169,97,.25);
+  border-bottom:1px solid rgba(201,169,97,.25);
+}
+.training-bg{
+  position:absolute;inset:0;pointer-events:none;
+  background:
+    radial-gradient(circle at 85% 15%, rgba(204,120,92,.22), transparent 45%),
+    radial-gradient(circle at 15% 90%, rgba(201,169,97,.10), transparent 45%);
+}
+.training-section .container{position:relative;z-index:2;max-width:1180px;margin:0 auto}
+.training-grid{
+  display:grid;
+  grid-template-columns:1.15fr 1fr;
+  gap:64px;
+  align-items:center;
+}
+.training-eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(204,120,92,.18);
+  border:1px solid rgba(204,120,92,.5);
+  color:var(--coral);
+  padding:6px 14px;border-radius:999px;
+  font-size:11px;letter-spacing:2px;font-weight:700;
+  margin-bottom:22px;
+  text-transform:uppercase;
+}
+.training-h2{
+  font-family:var(--jp);font-weight:800;font-size:36px;line-height:1.35;
+  color:#fff;letter-spacing:.5px;margin-bottom:22px;
+}
+.training-h2-en{
+  font-family:var(--chancery);font-style:italic;font-weight:400;
+  color:var(--gold-light);font-size:30px;letter-spacing:.5px;
+  display:block;margin-bottom:8px;
+}
+.training-body{
+  color:rgba(255,255,255,.88);font-size:15.5px;line-height:1.95;
+  margin-bottom:26px;max-width:560px;
+}
+.training-features{
+  list-style:none;padding:0;margin:0 0 32px;
+}
+.training-features li{
+  position:relative;
+  padding:10px 0 10px 28px;
+  border-bottom:1px solid rgba(255,255,255,.10);
+  font-size:14.5px;color:rgba(255,255,255,.92);
+}
+.training-features li:last-child{border-bottom:0}
+.training-features li::before{
+  content:"";position:absolute;left:0;top:18px;
+  width:14px;height:2px;background:var(--coral);
+}
+.training-features strong{
+  display:inline-block;
+  color:var(--gold-light);font-weight:700;font-size:12px;letter-spacing:1px;
+  min-width:84px;margin-right:8px;
+}
+.training-cta-row{display:flex;gap:14px;flex-wrap:wrap}
+.btn-training{
+  display:inline-block;padding:14px 28px;
+  background:var(--coral);color:#fff;font-weight:700;font-size:14px;
+  border-radius:6px;letter-spacing:.5px;
+  transition:background .2s,transform .15s;
+  box-shadow:0 10px 24px rgba(204,120,92,.35);
+}
+.btn-training:hover{background:var(--coral-dk);transform:translateY(-1px);color:#fff}
+.btn-training-ghost{
+  display:inline-block;padding:14px 28px;
+  background:transparent;color:#fff;font-weight:600;font-size:14px;
+  border:1px solid rgba(255,255,255,.35);border-radius:6px;letter-spacing:.5px;
+  transition:background .2s,border-color .2s;
+}
+.btn-training-ghost:hover{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.6);color:#fff}
+
+/* Visual side: stacked program cards */
+.training-visual{display:flex;justify-content:center;align-items:center}
+.training-card-stack{
+  display:grid;gap:14px;width:100%;max-width:420px;
+}
+.training-mini-card{
+  display:flex;gap:18px;align-items:center;
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(201,169,97,.28);
+  border-radius:10px;
+  padding:18px 22px;
+  backdrop-filter:blur(6px);
+  transition:transform .2s,border-color .2s,background .2s;
+}
+.training-mini-card:hover{
+  transform:translateX(4px);
+  border-color:rgba(204,120,92,.6);
+  background:rgba(204,120,92,.08);
+}
+.training-mini-num{
+  font-family:var(--chancery);font-style:italic;
+  color:var(--coral);font-size:30px;line-height:1;min-width:38px;
+}
+.training-mini-body{display:flex;flex-direction:column;gap:4px}
+.training-mini-body strong{color:#fff;font-size:14.5px;font-weight:700;letter-spacing:.3px}
+.training-mini-body span{color:rgba(255,255,255,.7);font-size:12.5px;line-height:1.55}
+
+@media (max-width:780px){
+  .training-section{padding:64px 20px}
+  .training-grid{grid-template-columns:1fr;gap:40px}
+  .training-h2{font-size:26px;line-height:1.45}
+  .training-h2-en{font-size:22px}
+  .training-body{font-size:14.5px}
+  .training-mini-num{font-size:26px}
 }
 
 /* ===== Demo page slideshow (2s per slide, 12s total cycle for 6 slides) ===== */
@@ -451,7 +587,7 @@ a:hover{color:var(--bright)}
   opacity:0;
   text-decoration:none;
   cursor:pointer;
-  animation:demo-slide-show 12s infinite;
+  animation:demo-slide-show 14s infinite;
 }
 .demo-slide img{
   position:absolute;inset:0;
@@ -502,19 +638,31 @@ a:hover{color:var(--bright)}
 }
 .demo-slide:hover .demo-slide-cta{color:var(--gold);border-color:var(--gold)}
 
-/* 6-slide rotation: each visible 2s with crossfade. Cycle 12s (6 x 2s) */
+/* 7-slide rotation: each visible 2s with crossfade. Cycle 14s (7 x 2s) */
 .demo-slide-1{animation-delay:0s}
 .demo-slide-2{animation-delay:2s}
 .demo-slide-3{animation-delay:4s}
 .demo-slide-4{animation-delay:6s}
 .demo-slide-5{animation-delay:8s}
 .demo-slide-6{animation-delay:10s}
+.demo-slide-7{animation-delay:12s}
 
 @keyframes demo-slide-show{
   0%        {opacity:0; z-index:1}
-  3%, 14%   {opacity:1; z-index:2}
-  17%, 100% {opacity:0; z-index:1}
+  3%, 12%   {opacity:1; z-index:2}
+  14%, 100% {opacity:0; z-index:1}
 }
+
+/* Featured (training) slide gets coral accent in demo slider too */
+.demo-slide-training .demo-slide-num{
+  color:#fff;
+  background:var(--coral);
+  padding:3px 10px;border-radius:3px;
+  font-family:var(--jp);font-style:normal;font-weight:700;
+  letter-spacing:2px;font-size:11px;
+}
+.demo-slide-training .demo-slide-cta{color:#fff;border-color:rgba(255,255,255,.65)}
+.demo-slide-training:hover .demo-slide-cta{color:var(--coral);border-color:var(--coral)}
 
 /* Dot indicators */
 .demo-slider-dots{
@@ -526,7 +674,7 @@ a:hover{color:var(--bright)}
 .demo-dot{
   width:8px;height:8px;border-radius:50%;
   background:rgba(255,255,255,.32);
-  animation:demo-dot-pulse 12s infinite;
+  animation:demo-dot-pulse 14s infinite;
 }
 .demo-dot-1{animation-delay:0s}
 .demo-dot-2{animation-delay:2s}
@@ -534,9 +682,10 @@ a:hover{color:var(--bright)}
 .demo-dot-4{animation-delay:6s}
 .demo-dot-5{animation-delay:8s}
 .demo-dot-6{animation-delay:10s}
+.demo-dot-7{animation-delay:12s}
 @keyframes demo-dot-pulse{
-  0%, 14%   {background:var(--gold-light); box-shadow:0 0 8px rgba(201,169,97,.6);}
-  17%, 100% {background:rgba(255,255,255,.32); box-shadow:none;}
+  0%, 12%   {background:var(--gold-light); box-shadow:0 0 8px rgba(201,169,97,.6);}
+  14%, 100% {background:rgba(255,255,255,.32); box-shadow:none;}
 }
 
 .demo-slider-hint{
