@@ -608,22 +608,26 @@ a:hover{color:var(--bright)}
 }
 .card.demo-card.has-thumb:hover .demo-thumb img{transform:scale(1.04)}
 .demo-card-body{
-  padding:24px 26px 26px;
+  padding:28px 32px 30px;
   display:flex;flex-direction:column;flex:1;
 }
 .demo-card-body .num{
   font-family:var(--chancery);font-style:italic;color:var(--gold);
-  font-size:34px;line-height:1;margin-bottom:6px;display:block;
+  font-size:36px;line-height:1;margin-bottom:10px;display:block;
 }
-.demo-card-body h3{color:var(--navy);font-size:18px;font-weight:700;margin-bottom:4px;line-height:1.4}
+.demo-card-body h3{color:var(--navy);font-size:18px;font-weight:700;margin-bottom:6px;line-height:1.45}
 .demo-card-body .en{
   font-family:var(--chancery);font-style:italic;color:var(--blue);
-  font-size:13px;display:block;margin-bottom:12px;
+  font-size:13px;display:block;margin-bottom:16px;
 }
-.demo-card-body p{color:var(--body);font-size:13.5px;line-height:1.75;flex:1}
+.demo-card-body p{color:var(--body);font-size:13.5px;line-height:1.8;flex:1;margin-bottom:0}
 .demo-card-body .demo-cta{
-  margin-top:14px;color:var(--blue);font-size:13px;font-weight:600;
+  margin-top:18px;color:var(--blue);font-size:13px;font-weight:600;
   letter-spacing:.5px;align-self:flex-start;
+}
+
+@media (max-width:780px){
+  .demo-card-body{padding:22px 24px 24px}
 }
 .card.demo-card.has-thumb:hover .demo-cta{color:var(--bright)}
 
