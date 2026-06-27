@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>BIツールはAIに吸収される ── ガートナーが告げる "Analytics as Code" の時代 | AI Consulting, Inc. Blog</title>
+<meta name="description" content="ガートナーが2026年5月のデータ＆アナリティクスサミットで提示した「AIネイティブな未来」。BIがAIに吸収されるという予測と、私たちが推奨するスタンスを解説します。">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<header class="site-header"><div class="nav">
+  <div class="brand">
+    <span class="en">AI Consulting, Inc.</span>
+    <span class="jp">AIコンサルティング株式会社</span>
+  </div>
+  <ul>
+    <li><a href="../index.html">HOME</a></li>
+    <li><a href="../about.html">会社概要</a></li>
+    <li><a href="../services.html">サービス</a></li>
+    <li><a href="../demos.html">デモ</a></li>
+    <li><a href="index.html">ブログ</a></li>
+    <li><a href="../contact.html" class="cta">お問い合わせ</a></li>
+  </ul>
+</div></header>
+
+<section class="page-hero"><div class="inner">
+  <div class="crumbs"><a href="../index.html">HOME</a> &nbsp;/&nbsp; <a href="index.html">BLOG</a></div>
+  <h1>BIツールはAIに吸収される ── ガートナーが告げる "Analytics as Code" の時代</h1>
+  <div class="en">The Future of BI: Absorbed by AI, or Surviving as Governance?</div>
+</div></section>
+
+<section class="section">
+  <article class="article">
+    <a href="index.html" class="back-link">ブログ一覧へ戻る</a>
+    <div class="article-meta">
+      <span class="blog-tag">考察</span>
+      <span class="date">2026.06.27</span>
+      <span class="author">by AI Consulting, Inc.</span>
+    </div>
+
+    <p>
+      ガートナーが2026年5月に開催した「データ＆アナリティクスサミット」で、業界に衝撃が走りました。
+      ジュリアン・サン氏（Julian Sun）が主張した <strong>"AIネイティブな未来 ── BIはAIに吸収される"</strong> という立場は、これまでBIツール（Tableau、Power BI 等）に投資し続けてきた多くの日本企業にとって、無視できない予測です。
+    </p>
+    <p>
+      私たちが日々 Claude Code をはじめとするフロンティアAIで実装してきたソリューションの方向性と、このガートナーの予測は驚くほど一致しています。本記事では、この議論の本質と、実務での意味、そして AI Consulting, Inc. の推奨スタンスを整理します。
+    </p>
+
+    <blockquote>
+      参考: <a href="https://enterprisezine.jp/article/detail/24451" target="_blank" rel="noopener">「BIツールはAIに吸収されるのか？存続するのか？ ガートナーが2つの立場で議論した「BIの未来」」EnterpriseZine（冨永裕子氏、2026/06/11）</a>
+    </blockquote>
+
+    <h2>ガートナーが提示した2つの立場</h2>
+    <p>
+      講演では、2人のアナリストが対立する見方を示しました。
+    </p>
+    <ul>
+      <li><strong>AIネイティブな未来（BIは吸収される）</strong> ── ジュリアン・サン氏</li>
+      <li><strong>BI主導のガバナンスの未来（BIは存続する）</strong> ── カート・シュレーゲル氏</li>
+    </ul>
+    <p>
+      どちらが「正しい」か、ではありません。むしろ多くの企業では <strong>両方が同時に進行する</strong> ── というのが現実的な見立てです。重要なのは、自社がどの位置に立っているか、そしてどの選択肢を採るかを、経営として明確に意思決定することです。
+    </p>
+
+    <h2>4種類のアナリティクスとAIの侵食</h2>
+    <p>
+      ガートナーは、アナリティクスを成熟度別に4つに分類しています。
+    </p>
+    <ol>
+      <li><strong>記述的アナリティクス（Descriptive）</strong> ── 何が起きたか</li>
+      <li><strong>診断的アナリティクス（Diagnostic）</strong> ── なぜ起きたか</li>
+      <li><strong>予測的アナリティクス（Predictive）</strong> ── 何が起きるか</li>
+      <li><strong>処方的アナリティクス（Prescriptive）</strong> ── 何をすべきか</li>
+    </ol>
+    <p>
+      従来のBIツールは <strong>主に最初の2つ</strong>（記述的・診断的）を担ってきました。3番目以降は、専門のデータサイエンティストが Python や R で別に組み上げる ── そんな分業が一般的でした。
+    </p>
+    <p>
+      ところがAIの登場で、この分業が崩れます。<strong>4つすべてのアナリティクスが、一つのオーケストレーション層の上で連携しながら実行できる</strong> ようになった。これがガートナーが指摘する大きな変化です。
+    </p>
+
+    <h2>"ドラッグ&ドロップ" の終わり ── プロンプトで作る時代へ</h2>
+    <p>
+      これまでのBIは、アナリストが <strong>ドラッグ&ドロップでダッシュボードを設計</strong> していました。これからは違います。
+    </p>
+    <blockquote>
+      ビジネスユーザーが "ビジネスの言葉" でプロンプトを入力するだけで、コーディングエージェントを経由し、より複雑なダッシュボードが作れるようになった。
+    </blockquote>
+    <p>
+      これが <strong>"Analytics as Code"</strong> の時代の意味です。ダッシュボードはGUI上の手作業ではなく、自然言語の問いから自動生成されるコードへと姿を変えています。
+    </p>
+    <p>
+      さらにサン氏は踏み込んで、 <strong>"アナリストのためのUIすら不要になろうとしている"</strong> と指摘しています。MCPサーバー経由で、ビジネスユーザーが直接アナリティクスエンジンからインサイトを引き出せるようになる ── ということです。
+    </p>
+
+    <h2>SaaSの終焉、ではなく "SaaSの再構成"</h2>
+    <p>
+      これを <strong>"SaaSの終焉"</strong> と呼ぶ向きもあります。事実、TableauやPower BI のような既存BIベンダーは、単なるデータ可視化ツールであり続けることができなくなりました。AIの能力を取り込むため、<strong>製品の根本的な再設計を強いられている</strong> 状況です。
+    </p>
+    <p>
+      しかし「SaaS が消える」のではなく、「SaaS の役割が再定義される」と捉えるほうが正確でしょう。SaaSは、「ユーザーインターフェース」から、「<strong>AIエージェントがアクセスする業務の知識ベース・ワークフロー実行基盤</strong>」へと変質していきます。
+    </p>
+
+    <h2>私たちが日々実践していること</h2>
+    <p>
+      AI Consulting, Inc. では、このガートナーの予測の "先取り" を、すでに日々のプロジェクトで実装しています。
+    </p>
+
+    <h3>1. ダッシュボードを "つくる" のではなく "プロンプトで呼び出す"</h3>
+    <p>
+      Claude Code をはじめとするコーディングエージェントを使えば、「先月の売上を、エリア別×商品カテゴリ別に分解したダッシュボードを出して」と言うだけで、数時間で動くものができます。私たちは保険・人事・不動産の業種別デモで、まさにこのアプローチで構築してきました。
+      <a href="../demos.html">AI駆動デモ一覧</a> でご覧いただけます。
+    </p>
+
+    <h3>2. "Human in the Loop" を前提にした画面設計</h3>
+    <p>
+      AIの予測は外れることがあります。だからこそ、人間が判断・修正できるUIを <strong>最初から組み込む</strong>。
+      これは <a href="ai-dashboards-as-conversation.html">AIダッシュボードは"会話の触媒"である</a> で詳しく書きました。
+    </p>
+
+    <h3>3. PoCの段階から計測指標を仕込む</h3>
+    <p>
+      "AIで何ができるか" ではなく "経営会議のあのKPIをどう動かすか" から逆算してデモを作る。Vibe Coding を業務に落とす実践プラクティスは
+      <a href="vibe-coding-with-claude.html">こちら</a> にまとめてあります。
+    </p>
+
+    <h2>日本企業の "保守バイアス" と向き合う</h2>
+    <p>
+      ガートナーの記事内でも、サン氏は「日本企業は、海外よりも保守的な傾向にある」と指摘しています。これは私たちも現場で痛感する点です。
+    </p>
+    <p>
+      既存のBIツール投資、運用契約、人材育成 ── これらに既に多くを投じてきた企業ほど、新しいパラダイムへの移行に慎重になるのは自然です。しかし、<strong>"動くもの" を最短で出して経営に見せれば、議論が変わります</strong>。
+      私たちは "PowerPointで議論を続けるより、半日で動くデモを出して触ってもらう" 方が、結局は意思決定が速くなることを、繰り返し体験してきました。
+    </p>
+
+    <blockquote>
+      "BIが消えるのではない。BIの主導権が、ツールベンダーから、AIを使いこなす現場側に移るだけだ。"
+    </blockquote>
+
+    <h2>これから経営者・現場リーダーがすべきこと</h2>
+    <ol>
+      <li><strong>既存BIツールの「役割」を整理する</strong> ── 何を残し、何をAI側に渡すか</li>
+      <li><strong>"Analytics as Code" を試す小さな PoC を1つやる</strong> ── 大きな投資の前にプロトタイプで感覚を掴む</li>
+      <li><strong>データガバナンスは "残す"</strong> ── BIが吸収されても、データの定義・権限・監査は残り続ける。むしろ重要性が増す</li>
+      <li><strong>現場の業務言語を翻訳できるパートナーを持つ</strong> ── AIの能力 × 業務の文脈、その両方がわかる人材／組織が鍵</li>
+    </ol>
+
+    <h2>最後に</h2>
+    <p>
+      ガートナーのこの議論は、業界に対する単なる予測ではなく、 <strong>"いま、自社のデータ活用とAI戦略をどう描き直すか"</strong> という経営課題の鏡です。
+    </p>
+    <p>
+      AI Consulting, Inc. は、 "your Innovation Partner" として、BI／AI／業務オーケストレーションの再設計をご一緒します。
+      数日〜数週間で動くデモを出し、貴社の意思決定の解像度を上げます。
+    </p>
+
+    <h2>関連リンク</h2>
+    <ul>
+      <li><a href="https://enterprisezine.jp/article/detail/24451" target="_blank" rel="noopener">原典: ガートナー BI議論記事（EnterpriseZine）</a></li>
+      <li><a href="claude-code-capabilities.html">Claude Code でできる10のこと</a></li>
+      <li><a href="ai-dashboards-as-conversation.html">AIダッシュボードは "会話の触媒" である</a></li>
+      <li><a href="insurance-simulator-story.html">保険プランシミュレーターを作った話</a></li>
+      <li><a href="../demos.html">AI駆動デモ一覧</a></li>
+    </ul>
+
+    <hr style="margin:48px 0;border:0;border-top:1px solid var(--ice)">
+    <p style="text-align:center;color:var(--muted);font-size:13px;font-style:italic">
+      この記事についてのご質問やご相談は <a href="../contact.html">お問い合わせ</a> よりお気軽にどうぞ。
+    </p>
+    <a href="index.html" class="back-link">ブログ一覧へ戻る</a>
+  </article>
+</section>
+
+<footer class="site-footer">
+  <div class="inner">
+    <div class="brand-block">
+      <span class="en">AI Consulting, Inc.</span>
+      <span class="jp">— ARISING INNOVATIONS —</span>
+      <p style="margin-top:14px;color:rgba(255,255,255,.7)">your Innovation Partner として、AI＆データ活用による事業構想・実装をご一緒に。</p>
+    </div>
+    <div>
+      <h4>CONTACT</h4>
+      <p><a href="mailto:info@ai-imf.com">info@ai-imf.com</a></p>
+      <p><a href="../contact.html">お問い合わせフォーム</a></p>
+    </div>
+    <div>
+      <h4>OFFICE</h4>
+      <p>〒106-0045<br>東京都港区麻布十番<br>1丁目2番7号<br>ラフィネ麻布十番701</p>
+    </div>
+    <div>
+      <h4>EXPLORE</h4>
+      <p><a href="../about.html">会社概要</a></p>
+      <p><a href="../services.html">サービス</a></p>
+      <p><a href="../demos.html">AI駆動デモ</a></p>
+      <p><a href="index.html">ブログ</a></p>
+    </div>
+  </div>
+  <div class="copy">
+    <span class="c">C</span>opyright © AI Consulting, Inc.  All Rights reserved.<br>
+    <span style="opacity:.6">T8011501019669 — インボイス制度適格請求書発行事業者登録番号</span>
+  </div>
+</footer>
+
+</body>
+</html>
