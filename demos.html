@@ -41,90 +41,86 @@
       ※ いずれも試作・PoC 用途であり、実運用時は業界規制・データ要件に合わせて再設計いたします。
     </p>
 
-    <!-- ===== Auto-rotating demo slideshow (2s per slide, 14s total cycle) ===== -->
-    <div class="demo-slider" role="region" aria-label="AI駆動デモのスライドショー" style="margin-top:48px">
+    <!-- ===== Demo thumbnail grid ===== -->
+    <div class="cards demo-cards-img" style="margin-top:48px">
 
-      <a class="demo-slide demo-slide-1 demo-slide-training" href="https://claude-code-training-two.vercel.app/" target="_blank" rel="noopener">
-        <img src="img/brain-ai.png" alt="Claude Code 研修">
-        <div class="demo-slide-caption">
-          <span class="demo-slide-num">FEATURED</span>
-          <h3>Claude Code 研修 <span class="demo-slide-en">Hands-on Training</span></h3>
+      <a class="card demo-card has-thumb featured-demo" href="https://claude-code-training-two.vercel.app/" target="_blank" rel="noopener">
+        <div class="demo-thumb"><img src="img/brain-ai.png" alt="Claude Code 研修"></div>
+        <div class="demo-card-body">
+          <span class="featured-tag">FEATURED</span>
+          <h3>Claude Code 研修</h3>
+          <span class="en">Hands-on Training</span>
           <p>役員・事業部長・グループ長クラスが、自らの手で業務アプリを作る半日ハンズオン。¥100,000（税別）／5名まで。フロンティアAIで意思決定者の "AI解像度" を一気に上げる研修プログラム。</p>
-          <span class="demo-slide-cta">研修の詳細を見る →</span>
+          <span class="demo-cta">研修の詳細を見る →</span>
         </div>
       </a>
 
-      <a class="demo-slide demo-slide-2" href="https://insurance-simulator-tawny.vercel.app" target="_blank" rel="noopener">
-        <img src="img/dashboard-insurance.png" alt="保険プラン・シミュレーター">
-        <div class="demo-slide-caption">
-          <span class="demo-slide-num">01</span>
-          <h3>保険プラン・シミュレーター <span class="demo-slide-en">Insurance Plan Simulator</span></h3>
-          <p>家族構成・働き方・資産・リスク許容度から、死亡／医療／がん／就業不能の必要保障額とカバー率を分析。90歳までの資産推移を3シナリオで予測。生命／医療／ペット／自動車／地震保険までカバー。</p>
-          <span class="demo-slide-cta">Live demo →</span>
+      <a class="card demo-card has-thumb" href="https://insurance-simulator-tawny.vercel.app" target="_blank" rel="noopener">
+        <div class="demo-thumb"><img src="img/dashboard-insurance.png" alt="保険プラン・シミュレーター"></div>
+        <div class="demo-card-body">
+          <span class="num">01</span>
+          <h3>保険プラン・シミュレーター</h3>
+          <span class="en">Insurance Plan Simulator</span>
+          <p>家族構成・働き方・資産・リスク許容度から、死亡／医療／がん／就業不能の必要保障額とカバー率を分析。90歳までの資産推移を3シナリオで予測。生命／医療／ペット／自動車／地震保険までカバーした単一ファイルの静的Webツール。</p>
+          <span class="demo-cta">Live demo →</span>
         </div>
       </a>
 
-      <a class="demo-slide demo-slide-3" href="https://hr-core-ai-app.vercel.app" target="_blank" rel="noopener">
-        <img src="img/dashboard-hr.png" alt="HRコア人事AI">
-        <div class="demo-slide-caption">
-          <span class="demo-slide-num">02</span>
-          <h3>HRコア人事AI <span class="demo-slide-en">People Analytics AI</span></h3>
+      <a class="card demo-card has-thumb" href="https://hr-core-ai-app.vercel.app" target="_blank" rel="noopener">
+        <div class="demo-thumb"><img src="img/dashboard-hr.png" alt="HRコア人事AI"></div>
+        <div class="demo-card-body">
+          <span class="num">02</span>
+          <h3>HR コア人事AI</h3>
+          <span class="en">People Analytics AI</span>
           <p>採用・育成・配置をデータドリブンに最適化する人事ダッシュボード。Next.js + shadcn/uiで、エンゲージメント・リテンション・スキルマッピングを統合可視化。エクゼクティブが「次の打ち手」をその場で議論できるUI。</p>
-          <span class="demo-slide-cta">Live demo →</span>
+          <span class="demo-cta">Live demo →</span>
         </div>
       </a>
 
-      <a class="demo-slide demo-slide-4" href="https://realestate-demo-hub.vercel.app" target="_blank" rel="noopener">
-        <img src="img/dashboard-realestate.png" alt="不動産DX">
-        <div class="demo-slide-caption">
-          <span class="demo-slide-num">03</span>
-          <h3>資産管理・不動産DX <span class="demo-slide-en">Asset &amp; Real Estate DX</span></h3>
+      <a class="card demo-card has-thumb" href="https://realestate-demo-hub.vercel.app" target="_blank" rel="noopener">
+        <div class="demo-thumb"><img src="img/dashboard-realestate.png" alt="不動産DX"></div>
+        <div class="demo-card-body">
+          <span class="num">03</span>
+          <h3>資産管理・不動産 DX</h3>
+          <span class="en">Asset &amp; Real Estate DX</span>
           <p>ポートフォリオ可視化と将来価値予測を一画面に集約。物件ごとのキャッシュフロー、エリア相場、リスクシナリオを横断比較。意思決定のスピードと精度を引き上げる管理者ダッシュボード。</p>
-          <span class="demo-slide-cta">Live demo →</span>
+          <span class="demo-cta">Live demo →</span>
         </div>
       </a>
 
-      <a class="demo-slide demo-slide-5" href="https://car-price-simulator.vercel.app" target="_blank" rel="noopener">
-        <img src="img/dashboard-sales.png" alt="中古車プライス・シミュレーター">
-        <div class="demo-slide-caption">
-          <span class="demo-slide-num">04</span>
-          <h3>中古車プライス・シミュレーター <span class="demo-slide-en">Used Car Price Simulator</span></h3>
+      <a class="card demo-card has-thumb" href="https://car-price-simulator.vercel.app" target="_blank" rel="noopener">
+        <div class="demo-thumb"><img src="img/dashboard-sales.png" alt="中古車プライス・シミュレーター"></div>
+        <div class="demo-card-body">
+          <span class="num">04</span>
+          <h3>中古車プライス・シミュレーター</h3>
+          <span class="en">Used Car Price Simulator</span>
           <p>車種・年式・走行距離・状態から予測価格を即時算出。回帰モデル＋業界相場で営業現場・査定担当者のクロージング率を支援する単一ファイルWebツール。</p>
-          <span class="demo-slide-cta">Live demo →</span>
+          <span class="demo-cta">Live demo →</span>
         </div>
       </a>
 
-      <a class="demo-slide demo-slide-6" href="#" onclick="alert('Frontier AI ダッシュボードは現在準備中です。ご興味があれば info@ai-imf.com までご連絡ください。');return false;">
-        <img src="img/brain-ai.png" alt="フロンティアAI 脅威対策ダッシュボード">
-        <div class="demo-slide-caption">
-          <span class="demo-slide-num">05</span>
-          <h3>フロンティアAI 脅威対策 <span class="demo-slide-en">Frontier AI Risk Dashboard</span></h3>
+      <a class="card demo-card has-thumb" href="#" onclick="alert('Frontier AI ダッシュボードは現在準備中です。ご興味があれば info@ai-imf.com までご連絡ください。');return false;">
+        <div class="demo-thumb"><img src="img/brain-ai.png" alt="フロンティアAI 脅威対策ダッシュボード"></div>
+        <div class="demo-card-body">
+          <span class="num">05</span>
+          <h3>フロンティアAI 脅威対策ダッシュボード</h3>
+          <span class="en">Frontier AI Risk Dashboard</span>
           <p>先端AIに伴う情報セキュリティ・倫理リスクを可視化。経営層が説明可能な統制を保ちながらAI活用を加速するためのリスクモニタリング基盤。</p>
-          <span class="demo-slide-cta">公開準備中 →</span>
+          <span class="demo-cta">公開準備中 →</span>
         </div>
       </a>
 
-      <a class="demo-slide demo-slide-7" href="#" onclick="alert('ATM コールセンターAIは現在準備中です。ご興味があれば info@ai-imf.com までご連絡ください。');return false;">
-        <img src="img/dashboard-pl.png" alt="ATMコールセンターAI">
-        <div class="demo-slide-caption">
-          <span class="demo-slide-num">06</span>
-          <h3>ATMコールセンターAI <span class="demo-slide-en">ATM Call Center Assistant</span></h3>
+      <a class="card demo-card has-thumb" href="#" onclick="alert('ATM コールセンターAIは現在準備中です。ご興味があれば info@ai-imf.com までご連絡ください。');return false;">
+        <div class="demo-thumb"><img src="img/dashboard-pl.png" alt="ATMコールセンターAI"></div>
+        <div class="demo-card-body">
+          <span class="num">06</span>
+          <h3>ATM コールセンターAI</h3>
+          <span class="en">ATM Call Center Assistant</span>
           <p>ATMの障害・問い合わせ対応をAIエージェントが一次受付。会話ログから根本原因を分類・トレンド化し、現場負荷とSLA違反を削減するオペレーション基盤。</p>
-          <span class="demo-slide-cta">公開準備中 →</span>
+          <span class="demo-cta">公開準備中 →</span>
         </div>
       </a>
 
-      <div class="demo-slider-dots" aria-hidden="true">
-        <span class="demo-dot demo-dot-1"></span>
-        <span class="demo-dot demo-dot-2"></span>
-        <span class="demo-dot demo-dot-3"></span>
-        <span class="demo-dot demo-dot-4"></span>
-        <span class="demo-dot demo-dot-5"></span>
-        <span class="demo-dot demo-dot-6"></span>
-        <span class="demo-dot demo-dot-7"></span>
-      </div>
-
-      <p class="demo-slider-hint">マウスを乗せると一時停止します</p>
     </div>
   </div>
 </section>
@@ -170,26 +166,4 @@
     </div>
     <div>
       <h4>CONTACT</h4>
-      <p><a href="mailto:info@ai-imf.com">info@ai-imf.com</a></p>
-      <p><a href="contact.html">お問い合わせフォーム</a></p>
-    </div>
-    <div>
-      <h4>OFFICE</h4>
-      <p>〒106-0045<br>東京都港区麻布十番<br>1丁目2番7号<br>ラフィネ麻布十番701</p>
-    </div>
-    <div>
-      <h4>EXPLORE</h4>
-      <p><a href="about.html">会社概要</a></p>
-      <p><a href="services.html">サービス</a></p>
-      <p><a href="demos.html">AI駆動デモ</a></p>
-      <p><a href="blog/index.html">ブログ</a></p>
-    </div>
-  </div>
-  <div class="copy">
-    <span class="c">C</span>opyright © AI Consulting, Inc.  All Rights reserved.<br>
-    <span style="opacity:.6">T8011501019669 — インボイス制度適格請求書発行事業者登録番号</span>
-  </div>
-</footer>
-
-</body>
-</html>
+    

@@ -387,19 +387,51 @@ a:hover{color:var(--bright)}
   border-color:var(--gold);
 }
 
-/* 6-slide rotation: each visible 5s, crossfade ~1s. Cycle 36s (6x6s) */
-.brain-slide{animation:brain-slide-show 36s infinite}
-.brain-slide-1{animation-delay:0s}
-.brain-slide-2{animation-delay:6s}
-.brain-slide-3{animation-delay:12s}
-.brain-slide-4{animation-delay:18s}
-.brain-slide-5{animation-delay:24s}
-.brain-slide-6{animation-delay:30s}
+/* JS-driven slide visibility (no CSS animation) */
+.brain-slide{
+  transition:opacity .8s ease-in-out;
+  pointer-events:none;
+}
+.brain-slide.is-active{
+  opacity:1;
+  z-index:2;
+  pointer-events:auto;
+}
 
-@keyframes brain-slide-show{
-  0%        {opacity:0; z-index:1}
-  3%, 14%   {opacity:1; z-index:2}
-  17%, 100% {opacity:0; z-index:1}
+/* Click zones: invisible "advance" button covers entire slide area,
+   except where the bottom-left caption link sits on top. */
+.brain-slide .slide-advance{
+  position:absolute;inset:0;z-index:3;
+  background:transparent;border:0;padding:0;margin:0;
+  cursor:pointer;
+}
+.brain-slide-link{
+  position:absolute;left:0;bottom:0;
+  width:62%;max-width:520px;
+  z-index:4;          /* above slide-advance so this area links out */
+  text-decoration:none;
+  display:block;
+}
+.brain-slide-link .brain-slide-caption{
+  /* override the absolute caption to fit within the link area */
+  position:relative;left:auto;right:auto;bottom:auto;
+}
+/* small "→ next" affordance hint on hover of advance area */
+.brain-slide .slide-advance:hover{
+  background:linear-gradient(to right, transparent 60%, rgba(201,169,97,.08) 100%);
+}
+.brain-slide .slide-advance::after{
+  content:"次へ ›";
+  position:absolute;top:50%;right:18px;transform:translateY(-50%);
+  font-family:var(--chancery);font-style:italic;
+  color:rgba(255,255,255,.45);font-size:14px;
+  opacity:0;transition:opacity .25s;
+  pointer-events:none;
+}
+.brain-slide .slide-advance:hover::after{opacity:1}
+
+@media (max-width:780px){
+  .brain-slide-link{width:80%}
 }
 
 /* Featured (training) slide gets coral accent */
@@ -423,27 +455,15 @@ a:hover{color:var(--bright)}
 .brain-dot{
   width:7px;height:7px;border-radius:50%;
   background:rgba(255,255,255,.35);
-  animation:brain-dot-pulse 36s infinite;
+  transition:background .3s, box-shadow .3s;
 }
-.brain-dot-1{animation-delay:0s}
-.brain-dot-2{animation-delay:6s}
-.brain-dot-3{animation-delay:12s}
-.brain-dot-4{animation-delay:18s}
-.brain-dot-5{animation-delay:24s}
-.brain-dot-6{animation-delay:30s}
-@keyframes brain-dot-pulse{
-  0%, 14%   {background:var(--gold-light); box-shadow:0 0 8px rgba(201,169,97,.6);}
-  17%, 100% {background:rgba(255,255,255,.35); box-shadow:none;}
+.brain-dot.is-active{
+  background:var(--gold-light);
+  box-shadow:0 0 8px rgba(201,169,97,.6);
 }
-
-/* Hover pause for accessibility (mouse over the slider stops rotation) */
-.brain-slider:hover .brain-slide,
-.brain-slider:hover .brain-dot{animation-play-state:paused}
 
 @media (prefers-reduced-motion: reduce){
-  .brain-slide,.brain-dot{animation:none}
-  .brain-slide-1{opacity:1}
-  .brain-dot-1{background:var(--gold-light)}
+  .brain-slide{transition:none}
 }
 
 /* ===== Featured: Claude Code Training section ===== */
@@ -568,6 +588,59 @@ a:hover{color:var(--bright)}
   .training-body{font-size:14.5px}
   .training-mini-num{font-size:26px}
 }
+
+/* ===== Demo cards with thumbnails (demos.html grid + homepage preview) ===== */
+.demo-cards-img{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;margin-top:28px}
+.card.demo-card.has-thumb{
+  display:flex;flex-direction:column;
+  padding:0;overflow:hidden;
+}
+.card.demo-card.has-thumb::before{display:none}
+.demo-thumb{
+  width:100%;aspect-ratio:16/9;
+  overflow:hidden;background:var(--navy);
+  border-bottom:1px solid var(--ice);
+}
+.demo-thumb img{
+  width:100%;height:100%;object-fit:cover;object-position:center top;
+  display:block;
+  transition:transform .5s ease;
+}
+.card.demo-card.has-thumb:hover .demo-thumb img{transform:scale(1.04)}
+.demo-card-body{
+  padding:24px 26px 26px;
+  display:flex;flex-direction:column;flex:1;
+}
+.demo-card-body .num{
+  font-family:var(--chancery);font-style:italic;color:var(--gold);
+  font-size:34px;line-height:1;margin-bottom:6px;display:block;
+}
+.demo-card-body h3{color:var(--navy);font-size:18px;font-weight:700;margin-bottom:4px;line-height:1.4}
+.demo-card-body .en{
+  font-family:var(--chancery);font-style:italic;color:var(--blue);
+  font-size:13px;display:block;margin-bottom:12px;
+}
+.demo-card-body p{color:var(--body);font-size:13.5px;line-height:1.75;flex:1}
+.demo-card-body .demo-cta{
+  margin-top:14px;color:var(--blue);font-size:13px;font-weight:600;
+  letter-spacing:.5px;align-self:flex-start;
+}
+.card.demo-card.has-thumb:hover .demo-cta{color:var(--bright)}
+
+/* Featured (training) demo card */
+.featured-demo{
+  position:relative;
+  border:1px solid rgba(204,120,92,.4) !important;
+  box-shadow:0 12px 32px rgba(204,120,92,.18), 0 0 0 1px rgba(204,120,92,.3);
+}
+.featured-tag{
+  display:inline-block;
+  background:var(--coral);color:#fff;
+  padding:3px 12px;border-radius:3px;
+  font-family:var(--jp);font-size:10px;font-weight:700;letter-spacing:2px;
+  margin-bottom:10px;
+}
+.featured-demo .demo-card-body h3{color:var(--coral-dk)}
 
 /* ===== Demo page slideshow (2s per slide, 12s total cycle for 6 slides) ===== */
 .demo-slider{
