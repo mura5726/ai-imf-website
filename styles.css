@@ -309,7 +309,7 @@ a:hover{color:var(--bright)}
   max-width:760px;
   text-shadow:0 2px 10px rgba(0,0,0,.35);
 }
-/* Subtle indicator dots showing the slide cycle */
+/* Subtle indicator line at section bottom */
 .brain-section::after{
   content:"";
   position:absolute;
@@ -318,6 +318,119 @@ a:hover{color:var(--bright)}
   width:64px;height:2px;
   background:linear-gradient(90deg,transparent,rgba(201,169,97,.6),transparent);
   pointer-events:none;
+}
+
+/* ===== Brain demo slider (within brain-text) ===== */
+.brain-slider{
+  position:relative;
+  margin:48px auto 0;
+  max-width:960px;
+  aspect-ratio:16/9;
+  border-radius:12px;
+  overflow:hidden;
+  box-shadow:0 24px 60px rgba(0,0,0,.45), 0 0 0 1px rgba(201,169,97,.3);
+  background:var(--navy);
+}
+.brain-slide{
+  position:absolute;inset:0;
+  display:block;
+  opacity:0;
+  animation:brain-slide-show 30s infinite;
+  text-decoration:none;
+  cursor:pointer;
+}
+.brain-slide img{
+  position:absolute;inset:0;
+  width:100%;height:100%;
+  object-fit:cover;object-position:center top;
+  display:block;
+  filter:brightness(.85) saturate(1.05);
+  transition:transform .8s ease, filter .3s ease;
+}
+.brain-slide:hover img{
+  transform:scale(1.02);
+  filter:brightness(1) saturate(1.1);
+}
+.brain-slide-caption{
+  position:absolute;left:0;right:0;bottom:0;
+  padding:28px 32px 36px;
+  color:#fff;
+  background:linear-gradient(to top, rgba(10,31,68,.95) 0%, rgba(10,31,68,.70) 60%, transparent 100%);
+  text-align:left;
+}
+.brain-slide-num{
+  display:inline-block;
+  font-family:var(--chancery);font-style:italic;
+  color:var(--gold-light);font-size:14px;letter-spacing:1px;
+  margin-bottom:6px;
+}
+.brain-slide-caption h3{
+  color:#fff;font-size:22px;font-weight:700;
+  margin-bottom:8px;letter-spacing:.3px;
+  text-shadow:0 2px 8px rgba(0,0,0,.5);
+}
+.brain-slide-caption p{
+  color:rgba(255,255,255,.88);
+  font-size:14px;line-height:1.7;
+  max-width:560px;
+  text-shadow:0 1px 6px rgba(0,0,0,.4);
+  margin-bottom:10px;
+}
+.brain-slide-cta{
+  display:inline-block;
+  font-family:var(--chancery);font-style:italic;
+  color:var(--gold-light);font-size:14px;
+  border-bottom:1px solid rgba(201,169,97,.5);
+  padding-bottom:2px;
+}
+.brain-slide:hover .brain-slide-cta{
+  color:var(--gold);
+  border-color:var(--gold);
+}
+
+/* 5-slide rotation: each visible 5s, crossfade ~1s. Cycle 30s (5x6s) */
+.brain-slide-1{animation-delay:0s}
+.brain-slide-2{animation-delay:6s}
+.brain-slide-3{animation-delay:12s}
+.brain-slide-4{animation-delay:18s}
+.brain-slide-5{animation-delay:24s}
+
+@keyframes brain-slide-show{
+  0%        {opacity:0; z-index:1}
+  2%, 18%   {opacity:1; z-index:2}
+  20%, 100% {opacity:0; z-index:1}
+}
+
+/* Dots indicator at bottom of slider */
+.brain-slider-dots{
+  position:absolute;left:50%;bottom:14px;transform:translateX(-50%);
+  z-index:3;
+  display:flex;gap:8px;
+  pointer-events:none;
+}
+.brain-dot{
+  width:7px;height:7px;border-radius:50%;
+  background:rgba(255,255,255,.35);
+  animation:brain-dot-pulse 30s infinite;
+}
+.brain-dot-1{animation-delay:0s}
+.brain-dot-2{animation-delay:6s}
+.brain-dot-3{animation-delay:12s}
+.brain-dot-4{animation-delay:18s}
+.brain-dot-5{animation-delay:24s}
+@keyframes brain-dot-pulse{
+  0%, 18%   {background:var(--gold-light); box-shadow:0 0 8px rgba(201,169,97,.6);}
+  20%, 100% {background:rgba(255,255,255,.35); box-shadow:none;}
+}
+
+/* Hover pause for accessibility (mouse over the slider stops rotation) */
+.brain-slider:hover .brain-slide,
+.brain-slider:hover .brain-dot{animation-play-state:paused}
+
+@media (prefers-reduced-motion: reduce){
+  .brain-slide,.brain-dot{animation:none}
+  .brain-slide-1{opacity:1}
+  .brain-dot-1{background:var(--gold-light)}
 }
 /* Accessibility: respect reduced-motion */
 @media (prefers-reduced-motion: reduce){
@@ -434,6 +547,10 @@ a:hover{color:var(--bright)}
   .brain-h2{font-size:24px;line-height:1.55}
   .brain-body{font-size:14.5px;line-height:1.95}
   .brain-section{min-height:380px}
+  .brain-slider{margin-top:32px;aspect-ratio:4/3}
+  .brain-slide-caption{padding:18px 20px 28px}
+  .brain-slide-caption h3{font-size:18px}
+  .brain-slide-caption p{font-size:13px;line-height:1.6}
   .solution-row{grid-template-columns:1fr;gap:24px;padding:24px}
   .solution-row.flip .solution-text{order:1}
   .solution-row.flip .solution-img{order:2}
